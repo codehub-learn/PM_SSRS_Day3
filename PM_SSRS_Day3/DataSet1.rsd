@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>SELECT TOP (1000) Dimension.[Stock Item].[Stock Item Key], Fact.Sale.[Customer Key], Fact.Sale.[Unit Price], Fact.Sale.Quantity, Fact.Sale.Package, Fact.Sale.[Tax Rate], Fact.Sale.[Total Excluding Tax], Fact.Sale.[Tax Amount], 
+                  Fact.Sale.[Total Including Tax], Fact.Sale.[Total Dry Items], Fact.Sale.[Total Chiller Items], Fact.Sale.Profit, Dimension.[Stock Item].Color, Dimension.[Stock Item].[Stock Item], Dimension.[Stock Item].Brand, Dimension.[Stock Item].Size, 
+                  Dimension.[Stock Item].[Selling Package], Dimension.[Stock Item].[Buying Package], Dimension.[Stock Item].[Unit Price] AS Expr1, Dimension.[Stock Item].[Tax Rate] AS Expr2, Dimension.[Stock Item].Barcode, 
+                  Dimension.Customer.[Customer Key] AS Expr3, Dimension.Customer.Customer, Dimension.Customer.Category, Dimension.Customer.[Buying Group], Dimension.Customer.[Primary Contact], Dimension.Customer.[Postal Code]
+FROM     Fact.Sale INNER JOIN
+                  Dimension.[Stock Item] ON Fact.Sale.[Stock Item Key] = Dimension.[Stock Item].[Stock Item Key] INNER JOIN
+                  Dimension.Customer ON Fact.Sale.[Customer Key] = Dimension.Customer.[Customer Key] AND Fact.Sale.[Bill To Customer Key] = Dimension.Customer.[Customer Key]</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Stock_Item_Key">
+        <DataField>Stock Item Key</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Customer_Key">
+        <DataField>Customer Key</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Unit_Price">
+        <DataField>Unit Price</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Quantity">
+        <DataField>Quantity</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Package">
+        <DataField>Package</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Tax_Rate">
+        <DataField>Tax Rate</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Total_Excluding_Tax">
+        <DataField>Total Excluding Tax</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Tax_Amount">
+        <DataField>Tax Amount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Total_Including_Tax">
+        <DataField>Total Including Tax</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Total_Dry_Items">
+        <DataField>Total Dry Items</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Total_Chiller_Items">
+        <DataField>Total Chiller Items</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Profit">
+        <DataField>Profit</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Color">
+        <DataField>Color</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Stock_Item">
+        <DataField>Stock Item</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Brand">
+        <DataField>Brand</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Size">
+        <DataField>Size</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Selling_Package">
+        <DataField>Selling Package</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Buying_Package">
+        <DataField>Buying Package</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr1">
+        <DataField>Expr1</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Expr2">
+        <DataField>Expr2</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Barcode">
+        <DataField>Barcode</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Expr3">
+        <DataField>Expr3</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Customer">
+        <DataField>Customer</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Category">
+        <DataField>Category</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Buying_Group">
+        <DataField>Buying Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Primary_Contact">
+        <DataField>Primary Contact</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Postal_Code">
+        <DataField>Postal Code</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
